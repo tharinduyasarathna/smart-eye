@@ -43,7 +43,7 @@ public class ImageController {
 
     //update existing image ( only name )
     @RequestMapping(value="/updateImageName/{id}",method = RequestMethod.PUT)
-    public ResponseEntity<Image> updateReport(@PathVariable Integer id, @RequestBody Image image){
+    public ResponseEntity<Image> updateImage(@PathVariable Integer id, @RequestBody Image image){
         Image tempImage=new Image();
         image.setId(id);
         Image image1 = imageService.fetchImage(image);
@@ -57,7 +57,7 @@ public class ImageController {
 
     //delete existing report
     @RequestMapping(value = "/deleteImage/{id}",method = RequestMethod.DELETE)
-    public ResponseEntity<Image> deleteReports(@PathVariable Integer id){
+    public ResponseEntity<Image> deleteImages(@PathVariable Integer id){
         if (!imageService.findById(id).isPresent()){
             ResponseEntity.badRequest().build();
         }

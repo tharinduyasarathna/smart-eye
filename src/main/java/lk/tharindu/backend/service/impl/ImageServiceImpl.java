@@ -1,6 +1,5 @@
 package lk.tharindu.backend.service.impl;
 
-import lk.tharindu.backend.exception.BodyContentNotValidException;
 import lk.tharindu.backend.exception.CustomDataIntergrityVoilationException;
 import lk.tharindu.backend.exception.DataNotFoundException;
 import lk.tharindu.backend.model.Image;
@@ -20,9 +19,12 @@ public class ImageServiceImpl implements ImageService {
 
     @Override
     public Image saveImage(Image image) {
-        if (image.getName().trim().isEmpty()){
-            throw new BodyContentNotValidException("Can't enter empty name");
-        }
+//        if (image.getName().trim().isEmpty()){
+//            throw new BodyContentNotValidException("Can't enter empty name");
+//        }
+
+
+        image.setName("img_"+ java.time.LocalDateTime.now());
 
         //check whether name is already exist.
         Optional<Image> optional= imageRepository.findByName(image.getName());
@@ -67,4 +69,8 @@ public class ImageServiceImpl implements ImageService {
     public void deteteById(Integer id) {
             imageRepository.deleteById(id);
     }
+
+
+
+
 }

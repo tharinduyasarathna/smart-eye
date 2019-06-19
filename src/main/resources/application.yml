@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/smartdb?createDatabaseIfNotExist=true
     username: root
-    password: 1qaz2wsx@
+    password:
     driver-class-name: com.mysql.jdbc.Driver
   jpa:
     hibernate:

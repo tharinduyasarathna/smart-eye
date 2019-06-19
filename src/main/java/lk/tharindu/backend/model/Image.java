@@ -8,8 +8,10 @@ import java.util.Date;
 public class Image implements Serializable {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Integer id;
+
+
     private String name;
 
     private Date storedDate;

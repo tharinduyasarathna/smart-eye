@@ -17,8 +17,12 @@ public class Video implements Serializable {
 
     @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn
-    @JsonIgnore
     private User user;
+
+    @PrePersist
+    protected void onCreate() {
+        storedDate = new Date();
+    }
 
     public Integer getId() {
         return id;
