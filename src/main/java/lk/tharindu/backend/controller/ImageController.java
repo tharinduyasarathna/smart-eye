@@ -56,7 +56,7 @@ public class ImageController {
     }
 
     //delete existing report
-    @RequestMapping(value = "/deleteReport/{id}",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/deleteImage/{id}",method = RequestMethod.DELETE)
     public ResponseEntity<Image> deleteReports(@PathVariable Integer id){
         if (!imageService.findById(id).isPresent()){
             ResponseEntity.badRequest().build();
