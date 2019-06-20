@@ -10,4 +10,6 @@ public class SmartEyeApplication {
 		SpringApplication.run(SmartEyeApplication.class, args);
 	}
 
+
+
 }
